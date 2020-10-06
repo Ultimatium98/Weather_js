@@ -1,4 +1,4 @@
-const KEY = '55a79c073500abfa6a6692a88475a1a1';
+const KEY = 'INSERT-API-KEY-HERE';
 let city;
 
 // ANIMATION
