@@ -1,0 +1,318 @@
+body{
+  margin: 0;
+  padding: 0;
+
+}
+/* ANIMATION */
+.animation {
+  width: 100%;
+  height: 110vh;
+  position: relative;
+  overflow: hidden;
+  background-color: #48b4e0;
+  background-size: cover;
+}
+
+.animation .animation-clouds {
+  width: 100%;
+  height: 80%;
+  background: url('../img/clouds-animation.png');
+  animation: animate 50s linear infinite;
+}
+
+.animation:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 200px;
+  z-index: 1000;
+  background: linear-gradient(transparent, #fff);
+
+}
+
+.animation #cloud1 {
+  position: absolute;
+  width: 100%;
+  height: 80%;
+  top: 40%;
+  right: -20%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+.animation #cloud2 {
+  position: absolute;
+  width: 100%;
+  height: 80%;
+  left: 30%;
+  top: 40%;
+  z-index: 9;
+}
+.animation #sun {
+  position: absolute;
+  width: 50%;
+  left: 25%;
+  bottom: -30%;
+  transform: translateY(50%);
+}
+
+@media screen and (max-width: 700px){
+  .animation #cloud1{
+    height: 65%;
+    top: 53%;
+  }
+  .animation #cloud2{
+    height: 65%;
+    top: 53%;
+  }
+}
+@media screen and (min-width: 1990px){
+  .animation #cloud1{
+    height: 140%;
+    top: 10%;
+  }
+  .animation #cloud2{
+    height: 140%;
+    top: 10%;
+  }
+}
+
+
+
+/* END ANIMATION */
+
+/* NAME */
+.name {
+  font-family: "bungee", cursive;
+  font-size: 35px;
+  width: 80%;
+  margin: 50px auto;
+  display: flex;
+  justify-content: center;
+
+}
+/* END NAME */
+
+/* METEO-CONTAINER */
+.main-container {
+  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, #48b4e0 15%);
+  min-height: 1000px;
+  display: flex;
+  justify-content: center;
+}
+
+.main-container .clouds-animation {
+  position: absolute;
+  width: 100%;
+  min-height: 1000px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: url('../img/clouds-animation.png');
+  background-repeat: repeat;
+  animation: animate 60s linear infinite;
+}
+
+@keyframes animate{
+  0%{
+    background-position: 0%;
+  }
+  100%{
+    background-position: 100%;
+  }
+}
+.meteo-container{
+  position: absolute;
+  align-self: center;
+  height: 90%;
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.meteo-container .input {
+  max-height: 5%;
+  width: 80%;
+  margin: 50px auto;
+  align-self: center;
+}
+
+
+.meteo-container .input input {
+  width: 100%;
+  height: 100%;
+  background: #66c9f1;
+  opacity: 0.6;
+  border-style: none;
+  border-radius: 30px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.meteo-container .meteo {
+  background-color: #66c9f1;
+  opacity: 0.8;
+  height: 80%;
+  width: 80%;
+  border-radius: 30px;
+  margin: 0 auto;
+  display: none;
+}
+
+@media screen and (max-width: 1000px){
+  .meteo-container .input {
+    width: 90%;
+    margin: 50px auto;
+  }
+
+  .meteo-container .meteo {
+    width: 90%
+  }
+}
+/* END METEO-CONTAINER */
+
+/* METEO */
+.meteo .current-section {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+
+.meteo .current-section .image-section {
+  width: 40%;
+  height: 100%;
+  display: flex;
+}
+
+.meteo .current-section .image-section img{
+  width: 70%;
+  height: 70%;
+  margin: auto;
+}
+
+.meteo .current-section .info {
+  position: relative;
+  width: 60%;
+  text-align: center;
+}
+
+.meteo .current-section .info .card {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease;
+}
+/* .rotate {
+  transform: rotateY(180deg);
+} */
+
+.meteo .current-section .info .card .front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background: white;
+  border-radius: 10px;
+}
+.text {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.card .front .text .place {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.card .front .text .place p{
+  font-size: 50px;
+}
+
+.card .front .text .degrees p{
+  font-size: 80px;
+  font-weight: bold;
+  margin: 20px auto;
+}
+.card .front .text .degrees p span{
+  position: absolute;
+  font-size: 30px;
+}
+.meteo .current-section .info .card .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background: white;
+  transform: rotateY(180deg);
+  border-radius: 10px;
+}
+
+.card .back .text p {
+  font-size: 25px;
+}
+
+.meteo .day-section {
+  height: 50%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.meteo .day-section .day {
+  background-color: white;
+  height: 170px;
+  width: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border-radius: 20px;
+  align-self: center;
+  text-align: center;
+}
+.meteo .day-section .day:hover {
+  transform: scale(1.2);
+}
+.meteo .day-section .day img {
+  width: 70%;
+  height: 70%;
+  align-self: center;
+}
+.meteo .day-section .day p {
+  margin: 5px auto;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 600px){
+  .meteo .current-section{
+    height: 40%;
+  }
+
+  .meteo .day-section{
+    height: 60%;
+  }
+
+  #city-name, #deg {
+    font-size: 40px !important;
+  }
+  .text p{
+    font-size: 20px !important;
+  }
+
+  .meteo .day-section .day {
+    height: 120px;
+    width: 100px;
+    margin: 10px;
+  }
+}
+/* END-METEO */
